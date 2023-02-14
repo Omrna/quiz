@@ -62,14 +62,14 @@ npm run dev
 
 ## Test
 If I have an extra time I'll built unit tests, however, now you can test the functionality of the system as follow:
-1. Go to `.env` fie to initialize your local environment. For example, change the following variables `DB_DATABASE`, `DB_USERNAME`, and `DB_PASSWORD`.
-2. Let say you local DB is named `quiz`. So create manually a new DB named `quiz`.
+1. Go to `.env` file to initialize your local environment. For example, change the following variables `DB_DATABASE`, `DB_USERNAME`, and `DB_PASSWORD`.
+2. Let say your local DB is named `quiz`. So create manually a new DB named `quiz`.
 3. Now go to your directory through the terminal, and then migrate tables into the local DB by `php artisan migrate  `
 4. And then run the server: ` php artisan serve `
 5. Go to your browser, and then open the development server, for example, `http://127.0.0.1:8000`
 6. Create 3 accounts (admin, user1, user2)
-7. In your local DB, change manually the `admin` account, and change the `role` field from `0` to `1`
-8. Now, thrugh the admin account account you can add a new question, and control the platform. From the other side, normal users will submit their answers.
+7. In your local DB, change manually the `admin` account by changing the `role` field from `0` to `1`
+8. Now, through the admin account, you can add a new question, and also control the platform. From the other side, normal users (`user1` and `user2`) will submit their answers.
 
 ## Authors and acknowledgment
 Omran ALhaddad - omranalhaddad22@gmail.com
