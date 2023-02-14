@@ -1,58 +1,75 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 
-## About Laravel
+## Task
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Build a Quiz web application, the user should be presented with the quiz questions on page visit, user should only see 1 question at a time, it can be either on separate pages or 1 page and load questions dynamically using JavaScript.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+After the user completed the Quiz, they will be presented with their score and a form that will accept their username to be stored into the database.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* Build the application with PHP language (use of PHP framework such as Laravel, CodeIgniter, Symfony, Slim, etc. are allowed)
+* On client side, use JQuery
+* Use MySQL, MariaDB, PostgreSQL, SQL Server or SQLite as the database
+* Simple UI is okay as long as its functional and decent UX (i.e. user should be able to take the quiz intuitively when looking at the page)
+Please use the data set provided in the SQL dump in this repo as a base. You can change original database data or structure that you think will make the solution better. You are allowed to use any library or framework to help you with the task.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## My solution
+I have used the following technologies to built the system: Laravel framework, PHP, JQuery, HTML, CSS, Bootstrap, and MySQL. As I used VueJS for the login/register system.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+Users must Register/Login initially using their unique username
+### Users level access
+I have created two access level of uesrs:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+**Administrator** - Who can control the platform (when 'role' in the 'users' table is 1)
 
-### Premium Partners
+**Normal users** - Who can submit answers (when 'role' in the 'users' table is 0)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+As an administrator on the app,
+* I can see all users;
+* I can see all admin users;
+* I can see all questions;
+* I can add a new question.
 
-## Contributing
+As a nomal user on the app,
+* I can submit my answers for the asked questions.
+* I can see my score.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Setting Up
+Make sure that you have composer installed
+```
+composer install
+```
 
-## Code of Conduct
+Also make sure that you have laravel installed in you local machine 
+```
+composer global require laravel/installer
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Clone my repo into you local machine, and then start Laravel's local development server using the Laravel's Artisan CLI serve command:
+```
+cd quiz
+ 
+php artisan serve
+```
 
-## Security Vulnerabilities
+**Note:** you might also need to install `npm` as I have used `VueJs` for the login system
+```
+npm install
+npm run dev
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Test
+If I have an extra time I'll built unit tests, however, now you can test the functionality of the system as follow:
+1. Go to `.env` fie to initialize your local environment. For example, change the following variables `DB_DATABASE`, `DB_USERNAME`, and `DB_PASSWORD`.
+2. Let say you local DB is named `quiz`. So create manually a new DB named `quiz`.
+3. Now go to your directory through the terminal, and then migrate tables into the local DB by `php artisan migrate  `
+4. And then run the server: ` php artisan serve `
+5. Go to your browser, and then open the development server, for example, `http://127.0.0.1:8000`
+6. Create 3 accounts (admin, user1, user2)
+7. In your local DB, change manually the `admin` account, and change the `role` field from `0` to `1`
+8. Now, thrugh the admin account account you can add a new question, and control the platform. From the other side, normal users will submit their answers.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Authors and acknowledgment
+Omran ALhaddad - omranalhaddad22@gmail.com
