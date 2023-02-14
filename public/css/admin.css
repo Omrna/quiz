@@ -1,0 +1,53 @@
+.admin-section {
+    font-size: 22px;
+}
+
+.left-side-nav {
+    height: 100%;
+    width: 280px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f9c607;
+    overflow-x: hidden;
+    padding-top: 90px;
+}
+
+.left-side-nav a {
+    padding: 22px 6px 6px 32px;
+    text-decoration: none;
+
+    color: #000;
+    display: block;
+}
+
+.left-side-nav a:hover {
+    color: #f1f1f1;
+    background-color: #ffdd00;
+}
+
+.main-contents {
+    margin-left: 280px; /* Same as the width of the sidenav */
+    padding-left: 100px;
+    padding-top: 50px;
+}
+
+.main-contents .page-title {
+    color: #f9c607;
+    font-weight: bold;
+}
+
+.main-contents .table-title {
+    background-color: #f9c607;
+    font-size: 22px;
+}
+
+.main-contents .table-contents {
+    font-size: 18px;
+}
+
+.main-contents .question-form {
+    color: #000;
+    font-size: 18px;
+}
